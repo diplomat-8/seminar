@@ -9,6 +9,7 @@ namespace Seminar
 {
     class Context: DbContext
     {
-
+        public DbSet<Car> Cars { get; set; }
+        public DbSet<Shop> Shops { get; set; }
     }
 }

@@ -14,6 +14,18 @@ namespace Seminar.Migrations
 
         protected override void Seed(Seminar.Context context)
         {
+            context.Cars.AddOrUpdate(
+                c => c.Name,
+                new Car{ Name = "Lada"},
+                new Car{ Name = "Volkswagen"},
+                new Car{ Name = "Mercedes"}
+                );
+            context.SaveChanges();
+            context.Shops.AddOrUpdate(
+                s => s.SName,
+                new Shop { SName = "Pegasus" },
+                new Shop { SName = "Express" }
+                );
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
